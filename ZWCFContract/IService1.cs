@@ -12,7 +12,13 @@ namespace ZWCFContract
 	public interface IService1
 	{
 		[OperationContract]
-		string GetData(int value);
+		void AddData(CompositeType value);
+
+		[OperationContract]
+		CompositeType GetData(int i);
+
+		[OperationContract]
+		Boolean DataExists(string s);
 
 		[OperationContract]
 		CompositeType GetDataUsingDataContract(CompositeType composite);
@@ -26,7 +32,7 @@ namespace ZWCFContract
 	public class CompositeType
 	{
 		bool boolValue = true;
-		string stringValue = "Hello ";
+		string stringValue = "";
 
 		[DataMember]
 		public bool BoolValue
